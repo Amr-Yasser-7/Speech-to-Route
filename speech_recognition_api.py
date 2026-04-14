@@ -7,13 +7,13 @@ import pickle
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel
 # This import is CRITICAL for pickle to resolve the function reference
-from main import extract_route_from_text
+from src.main import extract_route_from_text
 
 # 2. Create the app object
 app = FastAPI(title="Speech Recognition")
 
 # Load the brain from the pickle file
-pickle_in = open("Speech.pkl", "rb")
+pickle_in = open("models/Speech.pkl", "rb")
 Speech = pickle.load(pickle_in)
 
 # Extract components from pickle

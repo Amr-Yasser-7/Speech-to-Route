@@ -47,6 +47,7 @@ Speech = {
     "extract_route": extract_route_from_text
 }
 
-pickle_out = open("Speech.pkl","wb")
-pickle.dump(Speech,pickle_out)
-pickle_out.close()
+# Save to models directory
+os.makedirs("../models", exist_ok=True)
+with open("../models/Speech.pkl", "wb") as pickle_out:
+    pickle.dump(Speech, pickle_out)
