@@ -111,21 +111,20 @@ API will be live at `http://localhost:8000`. Interactive docs at `http://localho
 
 ## Project Structure
 
-```
-ara-route-parser/
-├── app/
-│   ├── main.py               # FastAPI entry point
-│   ├── engine.py             # Unified dispatch logic
-│   ├── advanced_qa.py        # AraElectra QA model interface
-├── docs/
+```Speech-to-Route/
+├── src/                    # Core logic and NLP functions
+│   ├── main.py
+│   └── route_extractor.py
+├── models/                 # Heavy model files (ignored in Git)
+│   └── Speech.pkl
+├── speech_recognition_api.py # Main Entry Point (at root)
+├── Docs/
 │   └── walkthrough.md        # Deep-dive architecture notes
-├── scripts/
-│   └── save_models.py        # One-time model download & serialization
-├── .gitignore               
+├── Scripts/
+│   └── save_models.py        # One-time model download & serialization├── requirements.txt
 ├── Dockerfile
-├── LICENSE
-├── README.md
-└── requirements.txt
+└── README.md
+
 ```
 
 ---
