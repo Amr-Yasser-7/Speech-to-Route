@@ -5,7 +5,7 @@ import json
 import torch
 import pickle
 
-# STAGE 1: Egyptian Arabic Speech-to-Text (Whisper fine-tuned)
+# STAGE 1: Egyptian Arabic Speech-to-Text 
 
 try:
     print("Loading Egyptian Arabic Whisper model... ")
@@ -22,17 +22,16 @@ except Exception as e:
     whisper_processor = None
     whisper_model = None
 
-# STAGE 2: Transportation Route Extraction (Pure AI Dispatcher)
+# STAGE 2: Transportation Route Extraction 
 
 try:
     from route_extractor import advanced_extract_route
     
     def extract_route_from_text(text: str) -> dict:
-        """Uses AI (AraElectra-QA) to extract origin and destination positions."""
         ai_res = advanced_extract_route(text)
         return {"origin": ai_res.get("origin"), "destination": ai_res.get("destination")}
         
-    print("AI Dispatcher (v3.0) integrated.")
+    print("AI Dispatcher  integrated.")
 
 except Exception as e:
     print(f"Failed to load AI Dispatcher: {e}")
