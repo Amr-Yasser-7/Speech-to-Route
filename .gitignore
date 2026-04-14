@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# Deep Learning Models (CRITICAL: Do not upload to GitHub)
+models/
+Speech.pkl
+
+# Audio Files
+*.wav
+*.mp3
+*.m4a
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
