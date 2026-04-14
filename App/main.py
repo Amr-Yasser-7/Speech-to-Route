@@ -25,7 +25,7 @@ except Exception as e:
 # STAGE 2: Transportation Route Extraction (Hybrid AI-Rule Dispatcher)
 
 try:
-    from advanced_qa_dispatcher import advanced_extract_route
+    from route_extractor import advanced_extract_route
     from syntactic_dispatcher import syntactic_extract_route
     
     def extract_route_from_text(text: str) -> dict:
