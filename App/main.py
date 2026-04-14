@@ -22,41 +22,24 @@ except Exception as e:
     whisper_processor = None
     whisper_model = None
 
-# STAGE 2: Transportation Route Extraction (Hybrid AI-Rule Dispatcher)
+# STAGE 2: Transportation Route Extraction (Pure AI Dispatcher)
 
 try:
     from route_extractor import advanced_extract_route
-    from syntactic_dispatcher import syntactic_extract_route
     
     def extract_route_from_text(text: str) -> dict:
+        """Uses AI (AraElectra-QA) to extract origin and destination positions."""
         ai_res = advanced_extract_route(text)
-        rule_res = syntactic_extract_route(text)
+        return {"origin": ai_res.get("origin"), "destination": ai_res.get("destination")}
         
-        # Default to AI results
-        final_route = {"origin": ai_res.get("origin"), "destination": ai_res.get("destination")}
-        
-        # Use Rules as safety net if AI confidence is low or values are missing
-        if not final_route["origin"] or ai_res.get("origin_score", 0) < 0.6:
-             final_route["origin"] = rule_res["origin"]
-             
-        if not final_route["destination"] or ai_res.get("destination_score", 0) < 0.6:
-             final_route["destination"] = rule_res["destination"]
-             
-        if rule_res["origin"] and rule_res["destination"]:
-            return rule_res
-
-        return final_route
-        
+    print("AI Dispatcher (v3.0) integrated.")
 
 except Exception as e:
-    print(f"Failed to load Hybrid Dispatcher: {e}")
-    try:
-            from syntactic_dispatcher import syntactic_extract_route
-            def extract_route_from_text(text: str) -> dict:
-                return syntactic_extract_route(text)
-    except:
-        def extract_route_from_text(text: str) -> dict:
-            return {"origin": None, "destination": None}
+    print(f"Failed to load AI Dispatcher: {e}")
+    
+    def extract_route_from_text(text: str) -> dict:
+        return {"origin": None, "destination": None}
+
 
 # Aggregate models and functions into the Speech object for pickling
 Speech = {
@@ -68,6 +51,3 @@ Speech = {
 pickle_out = open("Speech.pkl","wb")
 pickle.dump(Speech,pickle_out)
 pickle_out.close()
-
-with open("Speech.pkl", "wb") as pickle_out:
-        pickle.dump(Speech, pickle_out)
