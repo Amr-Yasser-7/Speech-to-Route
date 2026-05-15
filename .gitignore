@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Model weights
+models/*
+!models/.gitkeep
+
+# Data and artifacts
+data/*
+!data/.gitkeep
+scratch/
+
+# OS generated files
+.DS_Store
+Thumbs.db
