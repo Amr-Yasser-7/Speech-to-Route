@@ -272,6 +272,7 @@ def _get_extractor():
 
         # Try to find a trained NER model
         ner_candidates = [
+            os.path.join(project_root, 'models', 'bert-base-arabic-camelbert-mix_best'),
             os.path.join(project_root, 'models', 'ner_best'),
             os.path.join(project_root, 'models', 'egybert_best'),
             os.path.join(project_root, 'models', 'marbert_best'),
