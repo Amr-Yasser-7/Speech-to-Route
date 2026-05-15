@@ -4,8 +4,14 @@
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Transformers](https://img.shields.io/badge/🤗_Transformers-FFD21E?style=flat-square)](https://huggingface.co/)
+[![Hugging Face Space](https://img.shields.io/badge/🤗_Hugging_Face-Space-blue.svg?style=flat-square)](https://huggingface.co/spaces/Amr-Yasserr/ara-route-parser)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
+## 🚀 Try the Live Demo
+
+You can test the model immediately without installing anything! 
+👉 **[Click here to try the Live Demo on Hugging Face Spaces](https://huggingface.co/spaces/Amr-Yasserr/ara-route-parser)**
 
 ## 👋 Hello! Welcome to the Project
 
